@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Fusion 2048 - سياسة الخصوصية / Privacy Policy / 隐私政策</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #0A0E1A 0%, #16213E 100%);
+            color: #E8ECF4;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(22, 33, 62, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                        0 0 40px rgba(0, 229, 255, 0.05);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .logo {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #00E5FF, #7B2CBF);
+            box-shadow: 0 10px 35px rgba(0, 229, 255, 0.4),
+                        0 0 0 3px rgba(0, 229, 255, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 15px 45px rgba(0, 229, 255, 0.6),
+                        0 0 0 3px rgba(0, 229, 255, 0.4);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .logo-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .logo-fallback small {
+            font-size: 9px;
+            opacity: 0.8;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 10px 35px rgba(0, 229, 255, 0.4),
+                            0 0 0 3px rgba(0, 229, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 10px 45px rgba(0, 229, 255, 0.8),
+                            0 0 0 5px rgba(0, 229, 255, 0.35);
+            }
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #00E5FF;
+            margin-bottom: 8px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #8D99AE;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: rgba(0, 229, 255, 0.08);
+            border: 1.5px solid rgba(0, 229, 255, 0.25);
+            color: #8D99AE;
+            padding: 9px 22px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            transition: all 0.25s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(0, 229, 255, 0.15);
+            color: #00E5FF;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #00E5FF, #00C2FF);
+            color: #0A0E1A;
+            border-color: transparent;
+            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+        }
+
+        .policy-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .policy-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .effective-date {
+            text-align: center;
+            font-size: 13px;
+            color: #64748B;
+            margin-bottom: 30px;
+            padding: 12px;
+            background: rgba(0, 229, 255, 0.04);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 229, 255, 0.08);
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #00E5FF;
+            margin-top: 28px;
+            margin-bottom: 14px;
+            padding-right: 12px;
+            border-right: 3px solid #00E5FF;
+            font-weight: 700;
+        }
+
+        [dir="ltr"] h2 {
+            padding-right: 0;
+            padding-left: 12px;
+            border-right: none;
+            border-left: 3px solid #00E5FF;
+        }
+
+        p {
+            font-size: 15px;
+            color: #C8D3E5;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding-right: 0;
+            margin-bottom: 14px;
+        }
+
+        [dir="ltr"] ul {
+            padding-left: 0;
+        }
+
+        li {
+            font-size: 15px;
+            color: #C8D3E5;
+            padding: 8px 26px 8px 0;
+            position: relative;
+        }
+
+        [dir="ltr"] li {
+            padding: 8px 0 8px 26px;
+        }
+
+        li::before {
+            content: "◆";
+            color: #00E5FF;
+            position: absolute;
+            right: 0;
+            font-size: 10px;
+            top: 12px;
+        }
+
+        [dir="ltr"] li::before {
+            right: auto;
+            left: 0;
+        }
+
+        .contact {
+            background: rgba(123, 44, 191, 0.1);
+            border: 1px solid rgba(123, 44, 191, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-label {
+            font-size: 13px;
+            color: #8D99AE;
+            margin-bottom: 8px;
+        }
+
+        .contact a {
+            color: #00E5FF;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact a:hover {
+            color: #7B2CBF;
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 229, 255, 0.1);
+            font-size: 12px;
+            color: #64748B;
+        }
+
+        .footer .app-name {
+            color: #00E5FF;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+                border-radius: 14px;
+            }
+
+            h1 { font-size: 20px; }
+            h2 { font-size: 16px; }
+            p, li { font-size: 14px; }
+
+            .lang-btn {
+                padding: 7px 16px;
+                font-size: 13px;
+            }
+
+            .logo {
+                width: 90px;
+                height: 90px;
+                border-radius: 20px;
+            }
+
+            .logo-fallback { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo-wrapper">
+            <div class="logo">
+                <div class="logo-fallback" id="logoFallback">
+                    2048
+                    <small>Cube Fusion</small>
+                </div>
+                <img
+                    src="playstore-icon.png"
+                    alt="Cube Fusion 2048"
+                    class="logo-img"
+                    id="logoImg"
+                    onerror="this.style.display='none'"
+                    onload="document.getElementById('logoFallback').style.display='none'"
+                />
+            </div>
+        </div>
+        <h1 id="page-title">سياسة الخصوصية</h1>
+        <p class="subtitle" id="page-subtitle">Cube Fusion</p>
+    </div>
+
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('ar', this)">العربية</button>
+        <button class="lang-btn" onclick="switchLang('en', this)">English</button>
+        <button class="lang-btn" onclick="switchLang('zh', this)">中文</button>
+    </div>
+
+    <!-- ==================== العربية ==================== -->
+    <div class="policy-content active" id="content-ar">
+        <div class="effective-date">تاريخ السريان: 25 سبتمبر 2026</div>
+
+        <p>نشكرك على استخدام لعبة <strong>Cube Fusion 2048</strong> (المشار إليها فيما بعد بـ "اللعبة"). نحن نُولي خصوصيتك أهمية كبيرة، وتوضح هذه السياسة كيف نتعامل مع معلوماتك.</p>
+
+        <h2>أولاً: المعلومات التي نجمعها</h2>
+        <p>اللعبة <strong>لا تجمع ولا تخزّن ولا ترسل</strong> أي معلومات شخصية. على وجه التحديد:</p>
+        <ul>
+            <li>لا تتطلب اللعبة تسجيلاً أو إنشاء حساب، ولا تطلب منك الاسم أو البريد الإلكتروني أو رقم الهاتف أو أي بيانات شخصية.</li>
+            <li>لا تصل اللعبة إلى موقعك الجغرافي أو جهات الاتصال أو الكاميرا أو الميكروفون أو معرض الصور.</li>
+            <li>لا تجمع اللعبة معرّفات الجهاز (مثل IMEI أو Android ID أو معرّف الإعلانات).</li>
+        </ul>
+
+        <h2>ثانياً: تخزين البيانات محلياً</h2>
+        <p>تحفظ اللعبة <strong>أعلى نتيجة</strong> على جهازك فقط. هذه البيانات:</p>
+        <ul>
+            <li>مخزّنة على جهازك، ولا تُرفع إلى أي خادم.</li>
+            <li>لا تحتوي على أي معلومة تدل على هويتك.</li>
+            <li>تُحذف تلقائياً عند إزالة اللعبة من الجهاز.</li>
+        </ul>
+
+        <h2>ثالثاً: خدمات الطرف الثالث</h2>
+        <p>اللعبة <strong>لا تتضمن أي أدوات تحليل أو إعلانات أو أي مكوّنات تجمع البيانات</strong>. لذلك، لا يوجد أي طرف ثالث يحصل على معلوماتك من خلال اللعبة.</p>
+
+        <h2>رابعاً: خصوصية الأطفال</h2>
+        <p>اللعبة مناسبة لجميع الأعمار. وبما أننا لا نجمع أي معلومات شخصية، فلا توجد أي بيانات أطفال نجمعها. إذا كنت أحد الوالدين ولديك استفسار، يمكنك التواصل معنا عبر البريد أدناه.</p>
+
+        <h2>خامساً: أمن البيانات وحذفها</h2>
+        <p>بما أن اللعبة لا تجمع أي بيانات، فلا يوجد خطر تسريب. يمكنك حذف البيانات المحلية (أعلى نتيجة) في أي وقت عبر إزالة اللعبة من الجهاز.</p>
+
+        <h2>سادساً: تحديث هذه السياسة</h2>
+        <p>إذا حدث أي تغيير في هذه السياسة، سننشره في صفحة اللعبة على المتجر. يسري التغيير من تاريخ نشره.</p>
+
+        <h2>سابعاً: التواصل</h2>
+        <p>لأي استفسار بخصوص سياسة الخصوصية، تواصل معنا عبر:</p>
+
+        <div class="contact">
+            <div class="contact-label">المطوّر</div>
+            <p style="color:#fff;font-weight:700;margin-bottom:12px;">Cube Fusion Team</p>
+            <div class="contact-label">البريد الإلكتروني</div>
+            <a href="mailto:aatj77@gmail.com">aatj77@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- ==================== English ==================== -->
+    <div class="policy-content" id="content-en" dir="ltr">
+        <div class="effective-date">Effective Date: September 25, 2026</div>
+
+        <p>Thank you for using <strong>Cube Fusion 2048</strong> (referred to as "the Game"). We take your privacy seriously, and this policy explains how we handle your information.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>The Game <strong>does not collect, store, or transmit</strong> any personal information. Specifically:</p>
+        <ul>
+            <li>The Game does not require registration or account creation, and never asks for your name, email, phone number, or any personal data.</li>
+            <li>The Game does not access your location, contacts, camera, microphone, or photo gallery.</li>
+            <li>The Game does not collect device identifiers (such as IMEI, Android ID, or advertising ID).</li>
+        </ul>
+
+        <h2>2. Local Data Storage</h2>
+        <p>The Game saves your <strong>high score</strong> only on your device. This data:</p>
+        <ul>
+            <li>Is stored locally and never uploaded to any server.</li>
+            <li>Contains no information that can identify you.</li>
+            <li>Is automatically deleted when you uninstall the Game.</li>
+        </ul>
+
+        <h2>3. Third-Party Services</h2>
+        <p>The Game <strong>does not include any analytics, advertising, or data-collecting components</strong>. Therefore, no third party obtains your information through the Game.</p>
+
+        <h2>4. Children's Privacy</h2>
+        <p>The Game is suitable for all ages. Since we collect no personal information, we do not collect data from children. If you are a parent with concerns, please contact us using the email below.</p>
+
+        <h2>5. Data Security & Deletion</h2>
+        <p>Since the Game collects no data, there is no risk of a data breach. You can delete local data (high score) at any time by uninstalling the Game.</p>
+
+        <h2>6. Policy Updates</h2>
+        <p>If this policy changes, we will publish the update on the Game's store page. Changes take effect on the date of publication.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>For any questions about this privacy policy, contact us at:</p>
+
+        <div class="contact">
+            <div class="contact-label">Developer</div>
+            <p style="color:#fff;font-weight:700;margin-bottom:12px;">Cube Fusion Team</p>
+            <div class="contact-label">Email</div>
+            <a href="mailto:aatj77@gmail.com">aatj77@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- ==================== 中文 ==================== -->
+    <div class="policy-content" id="content-zh" dir="ltr">
+        <div class="effective-date">生效日期：2026年9月25日</div>
+
+        <p>感谢您使用 <strong>Cube Fusion 2048</strong>（以下简称"本游戏"）。我们非常重视您的隐私，本政策说明我们如何处理您的信息。</p>
+
+        <h2>一、我们收集的信息</h2>
+        <p>本游戏<strong>不收集、不存储、不传输</strong>任何个人信息。具体而言：</p>
+        <ul>
+            <li>本游戏无需注册或登录，不会要求您提供姓名、邮箱、手机号或任何个人信息。</li>
+            <li>本游戏不会访问您的位置信息、通讯录、相机、麦克风或相册。</li>
+            <li>本游戏不收集设备标识符（如 IMEI、Android ID 或广告 ID）。</li>
+        </ul>
+
+        <h2>二、本地数据存储</h2>
+        <p>本游戏仅将您的<strong>最高分记录</strong>保存在您的设备本地。该数据：</p>
+        <ul>
+            <li>仅存储在您的设备上，不会上传到任何服务器。</li>
+            <li>不包含任何可识别您身份的信息。</li>
+            <li>在您卸载本游戏时自动删除。</li>
+        </ul>
+
+        <h2>三、第三方服务</h2>
+        <p>本游戏<strong>未集成任何分析工具、广告 SDK 或数据收集组件</strong>。因此，没有任何第三方会通过本游戏获取您的信息。</p>
+
+        <h2>四、儿童隐私</h2>
+        <p>本游戏适合所有年龄段。由于我们不收集任何个人信息，因此不存在收集儿童个人信息的情况。如果您是家长并对此有疑问，欢迎通过下方邮箱联系我们。</p>
+
+        <h2>五、数据安全与删除</h2>
+        <p>由于本游戏不收集任何数据，不存在数据泄露的风险。您随时可以通过卸载本游戏来删除设备上的所有本地数据（最高分记录）。</p>
+
+        <h2>六、政策更新</h2>
+        <p>如本政策发生变更，我们会在应用商店页面更新本页面。变更后的政策自发布之日起生效。</p>
+
+        <h2>七、联系方式</h2>
+        <p>如您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
+
+        <div class="contact">
+            <div class="contact-label">开发者</div>
+            <p style="color:#fff;font-weight:700;margin-bottom:12px;">Cube Fusion Team</p>
+            <div class="contact-label">邮箱</div>
+            <a href="mailto:aatj77@gmail.com">aatj77@gmail.com</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 <span class="app-name">Cube Fusion</span> — All Rights Reserved
+    </div>
+</div>
+
+<script>
+    const translations = {
+        ar: { title: 'سياسة الخصوصية', dir: 'rtl', lang: 'ar' },
+        en: { title: 'Privacy Policy',   dir: 'ltr', lang: 'en' },
+        zh: { title: '隐私政策',          dir: 'ltr', lang: 'zh' }
+    };
+
+    function switchLang(lang, btn) {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        document.querySelectorAll('.policy-content').forEach(c => c.classList.remove('active'));
+        document.getElementById('content-' + lang).classList.add('active');
+
+        const t = translations[lang];
+        document.getElementById('page-title').textContent = t.title;
+        document.documentElement.dir = t.dir;
+        document.documentElement.lang = t.lang;
+        document.title = 'Cube Fusion 2048 - ' + t.title;
+    }
+</script>
+
+</body>
+</html>
