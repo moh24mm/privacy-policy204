@@ -32,6 +32,7 @@
             backdrop-filter: blur(10px);
         }
 
+        /* ===== الهيدر: دائماً في الوسط ===== */
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -117,12 +118,15 @@
             color: #8D99AE;
         }
 
+        /* ===== أزرار اللغات: ثابتة في المركز دائماً ===== */
         .lang-switcher {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 10px;
             margin-bottom: 30px;
             flex-wrap: wrap;
+            direction: ltr;
         }
 
         .lang-btn {
@@ -151,6 +155,7 @@
             box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
         }
 
+        /* ===== محتوى السياسة: هنا فقط يتغير الاتجاه ===== */
         .policy-content {
             display: none;
             animation: fadeIn 0.4s ease;
@@ -158,6 +163,19 @@
 
         .policy-content.active {
             display: block;
+        }
+
+        /* العربية: من اليمين لليسار */
+        .policy-content[data-lang="ar"] {
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* الإنجليزية والصينية: من اليسار لليمين */
+        .policy-content[data-lang="en"],
+        .policy-content[data-lang="zh"] {
+            direction: ltr;
+            text-align: left;
         }
 
         @keyframes fadeIn {
@@ -181,16 +199,24 @@
             color: #00E5FF;
             margin-top: 28px;
             margin-bottom: 14px;
-            padding-right: 12px;
-            border-right: 3px solid #00E5FF;
             font-weight: 700;
         }
 
-        [dir="ltr"] h2 {
-            padding-right: 0;
+        /* العربية: الشريط على اليمين */
+        .policy-content[data-lang="ar"] h2 {
+            padding-right: 12px;
+            padding-left: 0;
+            border-right: 3px solid #00E5FF;
+            border-left: none;
+        }
+
+        /* الإنجليزية والصينية: الشريط على اليسار */
+        .policy-content[data-lang="en"] h2,
+        .policy-content[data-lang="zh"] h2 {
             padding-left: 12px;
-            border-right: none;
+            padding-right: 0;
             border-left: 3px solid #00E5FF;
+            border-right: none;
         }
 
         p {
@@ -201,26 +227,21 @@
 
         ul {
             list-style: none;
-            padding-right: 0;
             margin-bottom: 14px;
-        }
-
-        [dir="ltr"] ul {
-            padding-left: 0;
         }
 
         li {
             font-size: 15px;
             color: #C8D3E5;
-            padding: 8px 26px 8px 0;
             position: relative;
         }
 
-        [dir="ltr"] li {
-            padding: 8px 0 8px 26px;
+        /* العربية: النقطة على اليمين */
+        .policy-content[data-lang="ar"] li {
+            padding: 8px 26px 8px 0;
         }
 
-        li::before {
+        .policy-content[data-lang="ar"] li::before {
             content: "◆";
             color: #00E5FF;
             position: absolute;
@@ -229,9 +250,20 @@
             top: 12px;
         }
 
-        [dir="ltr"] li::before {
-            right: auto;
+        /* الإنجليزية والصينية: النقطة على اليسار */
+        .policy-content[data-lang="en"] li,
+        .policy-content[data-lang="zh"] li {
+            padding: 8px 0 8px 26px;
+        }
+
+        .policy-content[data-lang="en"] li::before,
+        .policy-content[data-lang="zh"] li::before {
+            content: "◆";
+            color: #00E5FF;
+            position: absolute;
             left: 0;
+            font-size: 10px;
+            top: 12px;
         }
 
         .contact {
@@ -255,6 +287,8 @@
             font-size: 16px;
             font-weight: 600;
             transition: color 0.2s;
+            direction: ltr;
+            display: inline-block;
         }
 
         .contact a:hover {
@@ -269,6 +303,7 @@
             border-top: 1px solid rgba(0, 229, 255, 0.1);
             font-size: 12px;
             color: #64748B;
+            direction: ltr;
         }
 
         .footer .app-name {
@@ -332,7 +367,7 @@
     </div>
 
     <!-- ==================== العربية ==================== -->
-    <div class="policy-content active" id="content-ar">
+    <div class="policy-content active" data-lang="ar" id="content-ar">
         <div class="effective-date">تاريخ السريان: 25 سبتمبر 2026</div>
 
         <p>نشكرك على استخدام لعبة <strong>Cube Fusion 2048</strong> (المشار إليها فيما بعد بـ "اللعبة"). نحن نُولي خصوصيتك أهمية كبيرة، وتوضح هذه السياسة كيف نتعامل مع معلوماتك.</p>
@@ -377,7 +412,7 @@
     </div>
 
     <!-- ==================== English ==================== -->
-    <div class="policy-content" id="content-en" dir="ltr">
+    <div class="policy-content" data-lang="en" id="content-en">
         <div class="effective-date">Effective Date: September 25, 2026</div>
 
         <p>Thank you for using <strong>Cube Fusion 2048</strong> (referred to as "the Game"). We take your privacy seriously, and this policy explains how we handle your information.</p>
@@ -422,7 +457,7 @@
     </div>
 
     <!-- ==================== 中文 ==================== -->
-    <div class="policy-content" id="content-zh" dir="ltr">
+    <div class="policy-content" data-lang="zh" id="content-zh">
         <div class="effective-date">生效日期：2026年9月25日</div>
 
         <p>感谢您使用 <strong>Cube Fusion 2048</strong>（以下简称"本游戏"）。我们非常重视您的隐私，本政策说明我们如何处理您的信息。</p>
@@ -473,22 +508,23 @@
 
 <script>
     const translations = {
-        ar: { title: 'سياسة الخصوصية', dir: 'rtl', lang: 'ar' },
-        en: { title: 'Privacy Policy',   dir: 'ltr', lang: 'en' },
-        zh: { title: '隐私政策',          dir: 'ltr', lang: 'zh' }
+        ar: { title: 'سياسة الخصوصية', lang: 'ar' },
+        en: { title: 'Privacy Policy',   lang: 'en' },
+        zh: { title: '隐私政策',          lang: 'zh' }
     };
 
     function switchLang(lang, btn) {
+        // تحديث الأزرار
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
+        // تحديث المحتوى — لا نلمس dir على <html> أو <body>
         document.querySelectorAll('.policy-content').forEach(c => c.classList.remove('active'));
         document.getElementById('content-' + lang).classList.add('active');
 
+        // تحديث العنوان
         const t = translations[lang];
         document.getElementById('page-title').textContent = t.title;
-        document.documentElement.dir = t.dir;
-        document.documentElement.lang = t.lang;
         document.title = 'Cube Fusion 2048 - ' + t.title;
     }
 </script>
